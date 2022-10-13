@@ -16,16 +16,16 @@ function boxesQuantity(event) {
 
 function createBoxes() {
 	refs.boxes.innerHTML = "";
-
+	const element = [];
 	for (let i = 0; i < refs.inputNumber.value; i += 1) {
-		const element = document.createElement("div");
-		element.style.width = 30 + 10 * i + "px";
-		element.style.height = 30 + 10 * i + "px";
-		element.style.backgroundColor = getRandomHexColor();
-		element.style.margin = "15px";
-		boxes.append(element);
-		console.log(element.style.width);
+		const boxesElement = document.createElement("div");
+		boxesElement.style.width = 30 + 10 * i + "px";
+		boxesElement.style.height = 30 + 10 * i + "px";
+		boxesElement.style.backgroundColor = getRandomHexColor();
+		boxesElement.style.margin = "15px";
+		element.push(boxesElement);
 	}
+	boxes.append(...element);
 }
 
 function destroyBoxes() {
